@@ -8,17 +8,17 @@
 
 import UIKit
 
-class FFActionView: UITextView {
+public class FFActionView: UITextView {
     
     // 属性字符串
-    var attributedStr: NSAttributedString? {
+    public var attributedStr: NSAttributedString = NSAttributedString(string: "") {
         didSet {
             attributedText = attributedStr
         }
     }
     
     // 存放所有可以执行点击事件的对象数组
-    var items: [FFActionModel]? {
+    public var items: [FFActionModel] = [FFActionModel]() {
         didSet {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
               self.setUpActionRects()
@@ -26,10 +26,10 @@ class FFActionView: UITextView {
         }
     }
     // 被点击后的背景颜色
-    var selectedColor: UIColor = UIColor(white: 0, alpha: 0.7)
+    public var selectedColor: UIColor = UIColor(white: 0, alpha: 0.7)
     
     // 字符串里面某个item被点击
-    var itemIsClicked: ((_ action: FFActionModel)->())?
+    public var itemIsClicked: ((_ action: FFActionModel)->()) = { action in }
 
     // 标记选择的view
     fileprivate lazy var actionTag: Int = 1000
@@ -42,16 +42,16 @@ class FFActionView: UITextView {
         textContainerInset = UIEdgeInsets(top: 0, left: -5, bottom: 0, right: -5)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+    override public func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
         UIMenuController.shared.isMenuVisible = false
         return false
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         guard let point = touches.first?.location(in: self) else {
             return
@@ -61,7 +61,7 @@ class FFActionView: UITextView {
         }
         
         // 回调回去
-        itemIsClicked?(action)
+        itemIsClicked(action)
         
         // 添加底部标记
         for rect in action.rects {
@@ -73,13 +73,13 @@ class FFActionView: UITextView {
         }
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
             self.touchesCancelled(touches, with: event)
         }
     }
     
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override public func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         for view in subviews {
             if view.tag == actionTag {
                 UIView.animate(withDuration: 0.25, animations: {
@@ -90,7 +90,7 @@ class FFActionView: UITextView {
     }
     
     private func fetchActionModel(from point: CGPoint) -> FFActionModel? {
-        for action in items ?? [] {
+        for action in items {
             for rect in action.rects {
                 if rect.contains(point) {
                     return action
@@ -102,7 +102,7 @@ class FFActionView: UITextView {
     
     // 获取执行action动作的子字符串的rects(如果换行有两个rect)
     private func setUpActionRects(){
-        for action in items ?? [] {
+        for action in items {
             // 给selectedRange赋值会改变selectedTextRange的值
             selectedRange = action.range
             // 获取rect
@@ -119,7 +119,7 @@ class FFActionView: UITextView {
         }
     }
     
-    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+    override public func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         guard let _ = fetchActionModel(from: point) else {
             return false
         }

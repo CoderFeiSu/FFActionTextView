@@ -8,15 +8,14 @@
 
 import UIKit
 
-class FFActionModel: NSObject {
-    
+public class FFActionModel: NSObject {
     // 值
-    var value = ""
+    public var value = ""
     // 值的范围
-    var range: NSRange = NSMakeRange(0, 0)
+    public var range: NSRange = NSMakeRange(0, 0)
     // 值的类型(手机号或QQ号或网址)
-    var type = ""
+    public var type = ""
     // 值的rects(因为子字符串有可能换行就会有两个rect)
-    var rects = [CGRect.zero]
+    public var rects = [CGRect.zero]
     
 }
