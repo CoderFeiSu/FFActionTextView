@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A519B8EC1FF77A7700D542E8 /* FFString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A519B8EB1FF77A7700D542E8 /* FFString+Extension.swift */; };
+		A519B8EE1FF7822500D542E8 /* FFAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A519B8ED1FF7822500D542E8 /* FFAttributedString+Extension.swift */; };
 		A5FE7D411FF6835E0056C40F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FE7D401FF6835E0056C40F /* AppDelegate.swift */; };
 		A5FE7D431FF6835E0056C40F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FE7D421FF6835E0056C40F /* ViewController.swift */; };
 		A5FE7D461FF6835E0056C40F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5FE7D441FF6835E0056C40F /* Main.storyboard */; };
 		A5FE7D481FF6835E0056C40F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5FE7D471FF6835E0056C40F /* Assets.xcassets */; };
 		A5FE7D4B1FF6835E0056C40F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5FE7D491FF6835E0056C40F /* LaunchScreen.storyboard */; };
 		A5FE7D541FF684A60056C40F /* FFActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FE7D531FF684A60056C40F /* FFActionView.swift */; };
+		A5FE7D571FF6997D0056C40F /* FFActionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FE7D561FF6997C0056C40F /* FFActionModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A519B8EB1FF77A7700D542E8 /* FFString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FFString+Extension.swift"; sourceTree = "<group>"; };
+		A519B8ED1FF7822500D542E8 /* FFAttributedString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FFAttributedString+Extension.swift"; sourceTree = "<group>"; };
 		A5FE7D3D1FF6835E0056C40F /* FFActionViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFActionViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5FE7D401FF6835E0056C40F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5FE7D421FF6835E0056C40F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +29,7 @@
 		A5FE7D4A1FF6835E0056C40F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5FE7D4C1FF6835E0056C40F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5FE7D531FF684A60056C40F /* FFActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFActionView.swift; sourceTree = "<group>"; };
+		A5FE7D561FF6997C0056C40F /* FFActionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFActionModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +77,9 @@
 			isa = PBXGroup;
 			children = (
 				A5FE7D531FF684A60056C40F /* FFActionView.swift */,
+				A5FE7D561FF6997C0056C40F /* FFActionModel.swift */,
+				A519B8EB1FF77A7700D542E8 /* FFString+Extension.swift */,
+				A519B8ED1FF7822500D542E8 /* FFAttributedString+Extension.swift */,
 			);
 			name = FFActionView;
 			path = ../../FFActionView;
@@ -148,7 +157,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A519B8EE1FF7822500D542E8 /* FFAttributedString+Extension.swift in Sources */,
+				A519B8EC1FF77A7700D542E8 /* FFString+Extension.swift in Sources */,
 				A5FE7D431FF6835E0056C40F /* ViewController.swift in Sources */,
+				A5FE7D571FF6997D0056C40F /* FFActionModel.swift in Sources */,
 				A5FE7D541FF684A60056C40F /* FFActionView.swift in Sources */,
 				A5FE7D411FF6835E0056C40F /* AppDelegate.swift in Sources */,
 			);
