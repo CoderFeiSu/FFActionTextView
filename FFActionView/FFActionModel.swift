@@ -17,5 +17,4 @@ public class FFActionModel: NSObject {
     public var type = ""
     // 值的rects(因为子字符串有可能换行就会有两个rect)
     public var rects = [CGRect.zero]
-    
 }

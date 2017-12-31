@@ -13,18 +13,16 @@ import UIKit
 class ViewController: UIViewController {
 
     fileprivate lazy var kLineSpacing: CGFloat = 10
-    fileprivate lazy var kInteritemSpacing: CGFloat = 10
     fileprivate lazy var kScreenW: CGFloat = UIScreen.main.bounds.width
-    fileprivate lazy var kScreenH: CGFloat = UIScreen.main.bounds.height
     
     override func viewDidLoad() {
         super.viewDidLoad()
       
         let introduce = "我们可以提供"
         let phoneKey = "联系电话"
-        let phoneValue = "18680571673"
+        let phoneValue = "18878828899"
         let mailKey = "联系邮箱"
-        let mailValue = "sf2907989@163.com"
+        let mailValue = "444999@163.com"
         let totalStr = introduce + phoneKey + phoneValue + mailKey + mailValue
         guard let phoneValueNSRange = totalStr.fetchNSRange(of: phoneValue) else {return}
         guard let mailValueNSRange = totalStr.fetchNSRange(of: mailValue) else {return}

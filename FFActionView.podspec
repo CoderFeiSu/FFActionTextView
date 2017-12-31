@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "FFActionView"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "支持NSAttributedSting里面的字符串点击事件"
   `echo "4.0" > .swift-version`
 
