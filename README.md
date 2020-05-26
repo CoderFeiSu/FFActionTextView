@@ -17,7 +17,7 @@ class ViewController: UIViewController {
    fileprivate lazy var kScreenW: CGFloat = UIScreen.main.bounds.width
    
    override func viewDidLoad() {
-   super.viewDidLoad()
+      super.viewDidLoad()
    
       let introduce = "我们可以提供"
       let phoneKey = "联系电话"
