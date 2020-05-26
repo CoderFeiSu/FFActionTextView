@@ -55,7 +55,7 @@ class ViewController: UIViewController {
       // 设置actionView
       let actionView = FFActionView()
       actionView.itemIsClicked = {  action in
-      print("回调:\(action.value)---\(action.type)")
+         print("回调:\(action.value)---\(action.type)")
       }
       actionView.attributedStr = attrs
       actionView.items = actions
